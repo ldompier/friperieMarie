@@ -1,0 +1,54 @@
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: var(--clr-cream);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  &.scrolled {
+    background: rgba(253, 246, 236, 0.97);
+    border-bottom-color: var(--clr-beige);
+    box-shadow: 0 2px 16px rgba(90, 62, 43, 0.08);
+  }
+  &__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  &__brand {
+    display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--clr-brown);
+    &:hover { color: var(--clr-terracotta); }
+  }
+  &__logo-icon { font-size: 1.6rem; color: var(--clr-terracotta); }
+  &__name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; }
+  &__nav {
+    display: flex; align-items: center; gap: 2rem;
+    a {
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--clr-brown); cursor: pointer; position: relative; padding-bottom: 2px;
+      &::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--clr-terracotta); transition: width 0.25s ease; }
+      &:hover { color: var(--clr-terracotta); }
+      &:hover::after { width: 100%; }
+    }
+    .navbar__cta {
+      background: var(--clr-terracotta); color: var(--clr-white) !important; padding: 0.45rem 1.2rem;
+      border-radius: 30px; transition: background 0.25s ease, transform 0.2s ease;
+      &::after { display: none; }
+      &:hover { background: var(--clr-terra-dark); transform: translateY(-1px); }
+    }
+  }
+  &__burger {
+    display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px;
+    span { display: block; width: 26px; height: 2px; background: var(--clr-brown); border-radius: 2px; transition: all 0.3s ease; transform-origin: center; }
+    &.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    &.open span:nth-child(2) { opacity: 0; }
+    &.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    &__burger { display: flex; }
+    &__nav {
+      display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--clr-cream);
+      flex-direction: column; align-items: center; gap: 1.5rem; padding: 2rem 1.5rem;
+      border-bottom: 2px solid var(--clr-beige); box-shadow: 0 8px 24px rgba(90,62,43,0.10);
+      &.open { display: flex; }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+  <div class="navbar__inner container">
+    <a class="navbar__brand" (click)="scrollTo('accueil')">
+      <span class="navbar__logo-icon">&#9768;</span>
+      <span class="navbar__name">Friperie Marie</span>
+    </a>
+
+    <button class="navbar__burger" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navbar__nav" [class.open]="menuOpen()">
+      <a (click)="scrollTo('accueil')">Accueil</a>
+      <a (click)="scrollTo('a-propos')">À propos</a>
+      <a (click)="scrollTo('fonctionnement')">Dons &amp; fonctionnement</a>
+      <a (click)="scrollTo('contact')" class="navbar__cta">Heures &amp; contact</a>
+    </nav>
+  </div>
+</header>
