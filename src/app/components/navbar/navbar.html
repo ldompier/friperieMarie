@@ -1,8 +1,7 @@
 <header class="navbar" [class.scrolled]="isScrolled()">
   <div class="navbar__inner container">
     <a class="navbar__brand" (click)="scrollTo('accueil')">
-      <span class="navbar__logo-icon">&#9768;</span>
-      <span class="navbar__name">Friperie Marie</span>
+      <img class="navbar__logo" src="icone_friperie.png" alt="Friperie P'tit coup de coeur" />
     </a>
 
     <button class="navbar__burger" [class.open]="menuOpen()" (click)="toggleMenu()" aria-label="Menu">

@@ -13,24 +13,52 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 80%, rgba(192,97,74,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(122,140,106,0.15) 0%, transparent 50%);
+      z-index: -1;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(192,97,74,.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(122,140,106,.10) 0%, transparent 55%);
+      pointer-events: none;
     }
   }
 
-  &__hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(253,246,236,0.35);
-  }
+  &__hero-overlay { display: none; }
 
   &__hero-content {
     position: relative;
-    z-index: 1;
-    max-width: 800px;
+    width: 100%;
     padding-top: 100px;
     padding-bottom: 4rem;
+  }
+
+  &__hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  &__hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 750px;
+  }
+
+  &__hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    isolation: auto;
+
+    img {
+      max-width: 480px;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
+      display: block;
+    }
   }
 
   &__badge {
@@ -64,12 +92,14 @@
     max-width: 620px;
     margin-bottom: 2rem;
     line-height: 1.75;
+    text-align: center;
   }
 
   &__ctas {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
   }
 
   &__cards {
@@ -130,6 +160,8 @@
 
 @media (max-width: 768px) {
   .accueil {
+    &__hero-layout { gap: 1.5rem; }
+    &__hero-image { img { max-width: 300px; } }
     &__cards { grid-template-columns: 1fr; }
     &__banner { flex-direction: column; text-align: center; }
   }

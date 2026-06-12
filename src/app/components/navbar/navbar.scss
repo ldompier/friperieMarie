@@ -12,11 +12,23 @@
   }
   &__inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
   &__brand {
-    display: flex; align-items: center; gap: 0.5rem; cursor: pointer; color: var(--clr-brown);
-    &:hover { color: var(--clr-terracotta); }
+    display: flex; align-items: center; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    text-decoration: none;
+    &:hover .navbar__logo, &:focus .navbar__logo {
+      transform: scale(1.08) rotate(-3deg);
+      filter: drop-shadow(0 4px 12px rgba(192,97,74,0.35));
+    }
+    &:active .navbar__logo {
+      transform: scale(0.97);
+    }
   }
-  &__logo-icon { font-size: 1.6rem; color: var(--clr-terracotta); }
-  &__name { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; }
+  &__logo {
+    height: 54px; width: auto;
+    mix-blend-mode: multiply;
+    transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), filter 0.25s ease;
+  }
   &__nav {
     display: flex; align-items: center; gap: 2rem;
     a {
