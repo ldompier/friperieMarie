@@ -71,6 +71,23 @@
     h3 { font-family: var(--font-heading); font-size: 1.1rem; color: var(--clr-white); margin-bottom: 0.75rem; }
     p { font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.9); }
   }
+
+  &__important-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__important-content > div { flex: 1; min-width: 200px; }
+
+  &__interdiction {
+    height: 220px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    flex-shrink: 0;
+  }
 }
 
 @media (max-width: 768px) {
