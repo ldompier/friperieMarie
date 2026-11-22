@@ -9,6 +9,7 @@ Site web de la Friperie Marie — Métabetchouan, Québec.
 Pour déployer une mise à jour en production :
 
 ```bash
+vercel login
 vercel --prod
 ```
 
